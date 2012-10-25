@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+
+{% block extrahead %}
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+{% endblock %}
+
+
+{% block bodyclass %}{% endblock %}
+
+
+{% block left %}
+    <div class="home">
+        <div>
+            <h1><a href="{{ SITE_URL }}">hivi.mx</a></h1>
+        </div>
+        <div>
+            <p>
+                <b>Create</b> playlists collaborativly in <b>live</b> with your <b>friends</b> or <b>connect</b> with strangers and <b>discover</b> musics, funny videos or the next memes.
+            </p>
+        </div>
+    </div>
+    <div class="main">
+        <h1><a href="/">hivi.mx/</a></h1>
+        <h2></h2>
+        <form>
+             <input type="text" name="q" /> <input type="submit" class="btn" value="search" id="search"/>
+        </form>
+        <ul id="results">
+        </ul>
+     </div>
+ {% endblock %}
+
+ {% block right %}
+     <div class="home">
+         <h2>Start a new station</h2>
+         <div id="create">
+             <h3><form><input type="text" id="station-name"><input class="btn" type="submit" value="mix" id="mix-button"/><form></h3>
+         </div>
+         <div id="now-playing">
+         </div>
+     </div>
+     <div class="main">
+         <div id="frame">
+             <div id="player"></div>
+         </div>
+         <ul id="queue">
+         </ul>
+    </div>
+{% endblock %}
+
+<h2>Join a station</h2>
+<ul>
+    <li class="station">
+        <a href="#{% templatetag openvariable %}station.name{% templatetag closevariable %}">
+            <div>
+                <h3>#{% templatetag openvariable %}station.name{% templatetag closevariable %} ({% templatetag openvariable %}station.viewer{% templatetag closevariable %})</h3>
+                <p>Now playing: {% templatetag openvariable %}station.playing{% templatetag closevariable %}</p>
+            </div>
+        </a>
+    </li>
+</ul>
+
+
+{% block extrabody %}
+    <script src="http://api.dmcdn.net/all.js"></script>
+    <script src="/static/socket.io.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script>
+{% endblock %}
