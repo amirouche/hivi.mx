@@ -29,7 +29,8 @@ socket.on('stations', function (stations) {
 	    var h3 = $('<h3>').text('#' + station.name);
 	    h3.appendTo(li);
 	    if(station.playing) {
-		a.append('<p>').text('Now playing: ' + station.playing);
+		var p = $('<p>').text('Now playing: ' + station.playing.title);
+		p.appendTo(li);
 	    }
 	}
     }
