@@ -18,9 +18,11 @@ socket.on('stations', function (stations) {
 	list.appendTo(nowplaying);
 	for (var id=0; id<stations.length; id++) {
 	    var station = stations[id];
-	    var a = $('<a>').click(function() {
-		socket.emit('join', station.name);
-		return false
+	    var a = $('<a>');
+	    a.data('name', station.name);
+	    a.click(function() {
+		socket.emit('join', this.data('name'));
+		return false;
 	    });
 	    a.attr('class', 'station');
 	    a.appendTo(list);
