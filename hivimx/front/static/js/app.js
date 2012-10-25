@@ -21,7 +21,7 @@ socket.on('stations', function (stations) {
 	    var a = $('<a>');
 	    a.data('name', station.name);
 	    a.click(function() {
-		socket.emit('join', this.data('name'));
+		socket.emit('join', $(this).data('name'));
 		return false;
 	    });
 	    a.attr('class', 'station');
