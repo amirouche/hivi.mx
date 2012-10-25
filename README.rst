@@ -11,7 +11,7 @@ Install'n run
 
 ::
 
-  pip install django memo memo-client git+git://github.com/amirouche/hivi.mx.git
+  pip install django django-socketio-alt memo memo-client git+git://github.com/amirouche/hivi.mx.git
 
 Then run the following::
 
