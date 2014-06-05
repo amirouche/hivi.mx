@@ -3,7 +3,13 @@ hivi.mx
 =======
 
 
-Collaborative live playlist only dailymotion is supported yet.
+Collaborative live playlist using dailymotion API.
+
+TODO
+----
+
+- use oembed
+- use socketio/wamp/pythonium
 
 
 Install'n run
